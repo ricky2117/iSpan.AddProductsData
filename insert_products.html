@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New(2)抓所有類別(id順位:登山、男性、女性、登山)</title>
+</head>
+
+<body>
+    <script type="module">
+        let brandArr = [];
+        let productArr = [];
+        let styleArr = [];
+        let ProductStatement = 'insert Products(Id,ThirdCategoryId,BrandId,[Name],[Code],Price,ShortDescription,[Description],Thumbnail,CreateAt,UpdateTime,ShelfStatus) values ';
+        let StyleStatement = 'insert ProductStyles(Id,ProductId,Style,Inventory,MinimumStock) values ';
+        let BrandStatement = 'insert Brands(Id,Name,Thumbnail) values ';
+        let productImages; //取得全部商品的照片鏈結，以供後續撈圖片 
+        let brandImages = []; //取得全部品牌的照片鏈結，以供後續撈圖片
+        let descriptionImagesProUrl = []; //取得全部商品的Description是相對路徑圖片之鏈結，以供後續撈圖片
+
+        //---------------以下為取得JSON原生資料--------------------------------------------------------------------------
+        const brand_json_old = (await(await fetch('brands.json')).json())
+            .map((item, index) => { return { id: index + 1, ...item } }); //攀登類的 品牌以該json先(避免排序跟DB有差異)
+        const categories = (await(await fetch('categories.json')).json()).flat(); //所有商品分類(大 中 小)
+        //加大分類欄位，以便有重複的小分類時能加以區別
+        const productsKeepOn1 = (await(await fetch('products-KeepOn.json')).json()).flat()
+            .map((item) => { return { topType: '攀登', ...item } });  //攀登
+        const productsKeepOn2 = (await(await fetch('products-KeepOn-male.json')).json()).flat()
+            .map((item) => { return { topType: '男裝', ...item } });   //男性
+        const productsKeepOn3 = (await(await fetch('products-KeepOn-female.json')).json()).flat()
+            .map((item) => { return { topType: '女裝', ...item } });   //女性
+        const productsKeepOn4 = (await(await fetch('products-KeepOn-climbing.json')).json()).flat()
+            .map((item) => { return { topType: '登山', ...item } });;  //登山 
+
+        productArr = [...productsKeepOn1, ...productsKeepOn2, ...productsKeepOn3, ...productsKeepOn4]
+            .map((item, index) => { return { id: index + 1, ...item } });
+        brandArr = getAllBrand(productArr);
+        styleArr = getAllStyle(productArr);
+        brandImages = getBrandImage(brandArr);
+
+
+        //排除已有資料(攀登)
+        productArr = productArr.filter(item => item.id > 238);  //排除攀登類!(若不需則移除此行)
+        brandArr = brandArr.filter(item => item.id > 32); //排除攀登類!(若不需則移除此行)  ##如果要抓商品 這個要mark
+        styleArr = styleArr.filter(item => item.productId > 238); //排除攀登類!(若不需則移除此行)
+        //---------------輸出結果---------------------------------------------------------------------------------------
+        // console.log(productArr.length);
+        // console.log(getProInsertStatementAndImageUrl(productArr));   //Products SQL Statement(Insert)
+        // console.log(productImages); //Product Images Url(撈圖片用) ##直接寫在getProInsertStatementAndImageUrl()處理
+        // console.log(descriptionImagesProUrl) //Description圖片是相對路徑之商品鏈結(撈圖片用) ##直接寫在getProInsertStatementAndImageUrl()處理
+        // console.log(getBrandInsertStatement(brandArr)); //ProductBrands SQL Statement(Insert)
+        // console.log(brandImages); //ProductBrands Images Url(撈圖片用)
+        console.log(getStyleInsertStatement(styleArr)); //ProductStyles SQL Statement(Insert)
+
+        //---------------產生SQL語法---------------------------------------------------------------------------
+
+        //Product Insert語法 + 取得每筆商品圖片連結
+        function getProInsertStatementAndImageUrl(arr) {
+            const syntax = arr
+                .map((row) => {
+                    const { id, brand, name, price, shortDescription, description, imageUrl, subType, mainType, topType, productDetailLink
+                    } = row;
+                    //商品主圖
+                    productImages = productImages + '\n \'' + imageUrl + '\','
+                    //商品描述是相對路徑的圖片
+                    getProductsDescIsRelativePathUrl(description)
+
+                    return `(${id},${convertSubtypeToId(subType, mainType, topType)},${getBrandId(brand)},N'${escapeChar(name)}'
+                    ,'${getUUID()}',${price},N'${escapeChar(shortDescription)}',N'${escapeChar(modifyRelativePath(description))}','${getFileName(imageUrl)}',
+                    getDate(),getDate(),'上架中')`;
+                })
+                .join(",");
+
+            return ProductStatement + syntax + ";";
+        }
+        //ProductStyle Insert語法 
+        function getStyleInsertStatement(arr) {
+            const syntax = arr
+                .map((m) => {
+                    return `(${m.id},${m.productId},'${escapeChar(m.option)}',${getInventoryRandom()},${getMinimumStockRandom()})`;
+                }).join(',');
+            return StyleStatement + syntax + ";";
+        }
+
+        //ProductBrand Insert語法 
+        function getBrandInsertStatement(arr) {
+            const syntax = arr
+                .map((row) => {
+                    const { id, brand, brandLogoUrl } = row;
+
+                    return `(${id},'${brand}','${getFileName(brandLogoUrl)}')`;
+                })
+                .join(",");
+
+            return BrandStatement + syntax + ";";
+        }
+
+        //---------------以下為工具method---------------------------------------------------------------------------
+        function convertSubtypeToId(subType, mainType, topType) {
+            let result = categories.filter(item =>
+                item.subType === subType &&
+                item.minType === mainType &&
+                item.topType === topType
+            );
+            return result[0].Id
+        }
+
+        //處理可能跳脫字元的欄位ex. ->'<- 符號
+        function escapeChar(str) {
+            return str.replace(/'/g, "''");
+        }
+
+        //取得所有品牌 且排除重複
+        function getAllBrand(arr) {
+            let processArr = arr
+                .map((item) => {
+                    return { brand: item.brand, brandLogoUrl: item.brandLogoUrl };
+                })
+                .filter((m, index) => {
+                    let firstIndex = arr.findIndex(obj => obj.brand === m.brand);
+                    return index === firstIndex;
+                })
+                .map((item, i) => {
+                    return { id: i + 1, brand: item.brand, brandLogoUrl: item.brandLogoUrl };
+                })
+                .filter((n, index) => {
+                    //DB攀登類的brand是用brand.json抓的，為了ID順序跟原本一致+取得URL
+                    return index > 31;
+                });
+            return brand_json_old.concat(processArr)
+        }
+
+        //取得所有規格
+        function getAllStyle(arr) {
+            let id = 0;
+            return arr.map((item) => {
+                return { id: item.id, options: item.options.length === 0 ? [''] : item.options }
+            }).map((m) => {
+                let productId = m.id;
+                return m.options
+                    .map((option) => {
+                        id = id + 1;
+                        return { id, productId, option };
+                    })
+            }).flat();
+        }
+
+        //取得所有品牌圖片
+        function getBrandImage(arr) {
+            return arr.map(m => {
+                return m.brandLogoUrl;
+            })
+        }
+
+        //以品牌Name去抓  先前用好的陣列(brand_resultArr)的index值
+        function getBrandId(brandName) {
+            const processArr = brandArr.map(item => item.brand);
+            return processArr.indexOf(brandName) != -1
+                ? processArr.indexOf(brandName) + 1
+                : "";
+        }
+
+        //Product Code GUID 產生10碼  ref.https://www.cythilya.tw/2017/03/12/uuid/
+        function getUUID() {
+            var d = Date.now();
+            if (typeof performance !== 'undefined' && typeof performance.now === 'function') {
+                d += performance.now(); //use high-precision timer if available
+            }
+            return 'xxxxxx-xxx'.replace(/[xy]/g, function (c) {
+                var r = (d + Math.random() * 16) % 16 | 0;
+                d = Math.floor(d / 16);
+                return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16);
+            });
+        }
+
+        //網址 只抓其中的檔名 存到table
+        function getFileName(url) {
+            var fileName = url.split('/').pop();
+            return fileName;
+        }
+
+        //description欄位內的 相對路徑(改成指定的) -->Product/Images/<--  ##c+f搜尋  src=\\"(?!https|UploadFile/HTMLEditor/|//player\.vimeo\.com/video/).*?
+        function modifyRelativePath(desc) {
+            // return desc.replace(/src=\"UploadFile/HTMLEditor//g, "/Product/Images/");
+
+            let processDesc = desc.replaceAll("src=\"UploadFile/HTMLEditor/", "src=\"/Uploads/product/images/")
+                .replaceAll("src=\"UploadFile/Goods/7589/", "src=\"/Uploads/product/images/")
+                .replaceAll("src=\"UploadFile/Goods/3053/", "src=\"/Uploads/product/images/")
+                .replaceAll("src=\"UploadFile/Goods/3052/", "src=\"/Uploads/product/images/");
+            return processDesc
+        }
+
+        //取得Products Descritpion 是相對路徑的圖片 之商品詳細頁面連結(再撈圖片)
+        function getProductsDescIsRelativePathUrl(desc) {
+            let regex = /src="(UploadFile\/HTMLEditor[^"]+|UploadFile\/Goods\/7589[^"]+|UploadFile\/Goods\/3053[^"]+|UploadFile\/Goods\/3052[^"]+)"/g;
+            const matches = desc.matchAll(regex);
+            for (const match of matches) {
+                const relativePath = match[0];
+                const fullPath = `https://store.keepon.com.tw/${relativePath.slice(5, -1)}`;
+                descriptionImagesProUrl.push(fullPath);
+            }
+            return descriptionImagesProUrl;
+        }
+
+        //庫存 亂數3~30
+        function getInventoryRandom() {
+            const min = 3;
+            const max = 30;
+            const randomInventory = Math.floor(Math.random() * (max - min + 1)) + min;
+
+            return randomInventory;
+        }
+
+        //最小存貨量 亂數3、4、5、10、15
+        function getMinimumStockRandom() {
+            const options = [3, 4, 5, 10, 15];
+            const randomIndex = Math.floor(Math.random() * options.length);
+            const randomMinimumStock = options[randomIndex];
+
+            return randomMinimumStock;
+        }
+
+    </script>
+</body>
+
+</html>

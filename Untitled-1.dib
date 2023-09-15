@@ -1,0 +1,30 @@
+#!meta
+
+{"kernelInfo":{"defaultKernelName":"csharp","items":[{"aliases":[],"name":"csharp"},{"aliases":[],"languageName":"javascript","name":"javascript"}]}}
+
+#!csharp
+
+#r "nuget: Microsoft.DotNet.Interactive.SqlServer, *-*"
+
+#!csharp
+
+#!connect mssql --kernel-name Bump "Server=.;Initial Catalog=Bump;persist security info=False;user id=Bumper;password=FQfWN0~R6:wd;Encrypt=No"
+
+#!csharp
+
+#!sql-Bump --name ThirdCategories
+
+select * from ThirdCategories
+
+#!javascript
+
+#!set --value @sql-Bump:ThirdCategories --name ThirdCategories
+
+const idNameMap = ThirdCategories[0].data.reduce((acc, cur) => {
+    return {
+        ...acc,
+        [cur.Name]: cur.Id
+    }
+}, {});
+
+console.log(JSON.stringify(idNameMap))

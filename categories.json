@@ -1,0 +1,896 @@
+[
+    {
+        "topType": "攀登",
+        "minType": "鉤環",
+        "Id": 1,
+        "subType": "有鎖鉤環"
+    },
+    {
+        "topType": "攀登",
+        "minType": "鉤環",
+        "Id": 2,
+        "subType": "快扣"
+    },
+    {
+        "topType": "攀登",
+        "minType": "器械",
+        "Id": 3,
+        "subType": "確保器"
+    },
+    {
+        "topType": "攀登",
+        "minType": "器械",
+        "Id": 4,
+        "subType": "上升｜下降器"
+    },
+    {
+        "topType": "攀登",
+        "minType": "器械",
+        "Id": 5,
+        "subType": "滑輪"
+    },
+    {
+        "topType": "攀登",
+        "minType": "器械",
+        "Id": 6,
+        "subType": "固定點"
+    },
+    {
+        "topType": "攀登",
+        "minType": "身體裝備",
+        "Id": 7,
+        "subType": "岩盔｜安全帽"
+    },
+    {
+        "topType": "攀登",
+        "minType": "身體裝備",
+        "Id": 8,
+        "subType": "攀岩鞋"
+    },
+    {
+        "topType": "攀登",
+        "minType": "身體裝備",
+        "Id": 9,
+        "subType": "攀岩吊帶"
+    },
+    {
+        "topType": "攀登",
+        "minType": "身體裝備",
+        "Id": 10,
+        "subType": "粉袋"
+    },
+    {
+        "topType": "攀登",
+        "minType": "身體裝備",
+        "Id": 11,
+        "subType": "抱石墊"
+    },
+    {
+        "topType": "攀登",
+        "minType": "繩索",
+        "Id": 12,
+        "subType": "動力繩｜攀登繩"
+    },
+    {
+        "topType": "攀登",
+        "minType": "繩索",
+        "Id": 13,
+        "subType": "靜力繩"
+    },
+    {
+        "topType": "攀登",
+        "minType": "繩索",
+        "Id": 14,
+        "subType": "樹攀繩"
+    },
+    {
+        "topType": "攀登",
+        "minType": "繩索",
+        "Id": 15,
+        "subType": "走繩"
+    },
+    {
+        "topType": "攀登",
+        "minType": "繩索",
+        "Id": 16,
+        "subType": "繩袋背包"
+    },
+    {
+        "topType": "攀登",
+        "minType": "繩索",
+        "Id": 17,
+        "subType": "輔助繩"
+    },
+    {
+        "topType": "攀登",
+        "minType": "繩索",
+        "Id": 18,
+        "subType": "Sling帶環"
+    },
+    {
+        "topType": "攀登",
+        "minType": "繩索",
+        "Id": 19,
+        "subType": "扁帶｜傘帶"
+    },
+    {
+        "topType": "攀登",
+        "minType": "冰雪攀",
+        "Id": 20,
+        "subType": "冰斧"
+    },
+    {
+        "topType": "攀登",
+        "minType": "冰雪攀",
+        "Id": 21,
+        "subType": "冰爪"
+    },
+    {
+        "topType": "攀登",
+        "minType": "冰雪攀",
+        "Id": 22,
+        "subType": "冰攀吊帶"
+    },
+    {
+        "topType": "攀登",
+        "minType": "冰雪攀",
+        "Id": 23,
+        "subType": "雪鏡"
+    },
+    {
+        "topType": "攀登",
+        "minType": "冰雪攀",
+        "Id": 24,
+        "subType": "固定點"
+    },
+    {
+        "topType": "攀登",
+        "minType": "冰雪攀",
+        "Id": 25,
+        "subType": "雪鋸｜雪鏟"
+    },
+    {
+        "topType": "攀登",
+        "minType": "朔溪",
+        "Id": 26,
+        "subType": "防水背包"
+    },
+    {
+        "topType": "攀登",
+        "minType": "朔溪",
+        "Id": 27,
+        "subType": "防水收納袋"
+    },
+    {
+        "topType": "攀登",
+        "minType": "朔溪",
+        "Id": 28,
+        "subType": "溯溪用品"
+    },
+    {
+        "topType": "攀登",
+        "minType": "朔溪",
+        "Id": 29,
+        "subType": "水上救生"
+    },
+    {
+        "topType": "攀登",
+        "minType": "朔溪",
+        "Id": 30,
+        "subType": "游泳器材"
+    },
+    {
+        "topType": "登山",
+        "minType": "背包",
+        "Id": 31,
+        "subType": "60L以上大背包"
+    },
+    {
+        "topType": "登山",
+        "minType": "背包",
+        "Id": 32,
+        "subType": "40-60L中背包"
+    },
+    {
+        "topType": "登山",
+        "minType": "背包",
+        "Id": 33,
+        "subType": "40L以下小背包"
+    },
+    {
+        "topType": "登山",
+        "minType": "背包",
+        "Id": 34,
+        "subType": "軍用｜狩獵"
+    },
+    {
+        "topType": "登山",
+        "minType": "背包",
+        "Id": 35,
+        "subType": "旅行背包"
+    },
+    {
+        "topType": "登山",
+        "minType": "背包",
+        "Id": 36,
+        "subType": "嬰兒背架"
+    },
+    {
+        "topType": "登山",
+        "minType": "背包",
+        "Id": 37,
+        "subType": "防水｜收納"
+    },
+    {
+        "topType": "登山",
+        "minType": "背包",
+        "Id": 38,
+        "subType": "腰包｜配件"
+    },
+    {
+        "topType": "登山",
+        "minType": "睡袋｜睡墊",
+        "Id": 39,
+        "subType": "三季睡袋"
+    },
+    {
+        "topType": "登山",
+        "minType": "睡袋｜睡墊",
+        "Id": 40,
+        "subType": "四季睡袋"
+    },
+    {
+        "topType": "登山",
+        "minType": "睡袋｜睡墊",
+        "Id": 41,
+        "subType": "睡墊"
+    },
+    {
+        "topType": "登山",
+        "minType": "睡袋｜睡墊",
+        "Id": 42,
+        "subType": "枕頭｜配件"
+    },
+    {
+        "topType": "登山",
+        "minType": "帳篷｜露宿",
+        "Id": 43,
+        "subType": "帳篷"
+    },
+    {
+        "topType": "登山",
+        "minType": "帳篷｜露宿",
+        "Id": 44,
+        "subType": "外帳｜天幕"
+    },
+    {
+        "topType": "登山",
+        "minType": "帳篷｜露宿",
+        "Id": 45,
+        "subType": "吊床"
+    },
+    {
+        "topType": "登山",
+        "minType": "帳篷｜露宿",
+        "Id": 46,
+        "subType": "露宿袋"
+    },
+    {
+        "topType": "登山",
+        "minType": "帳篷｜露宿",
+        "Id": 47,
+        "subType": "地布"
+    },
+    {
+        "topType": "登山",
+        "minType": "帳篷｜露宿",
+        "Id": 48,
+        "subType": "營釘｜配件"
+    },
+    {
+        "topType": "登山",
+        "minType": "帳篷｜露宿",
+        "Id": 49,
+        "subType": "貓鏟"
+    },
+    {
+        "topType": "登山",
+        "minType": "照明燈具",
+        "Id": 50,
+        "subType": "頭燈"
+    },
+    {
+        "topType": "登山",
+        "minType": "照明燈具",
+        "Id": 51,
+        "subType": "營燈"
+    },
+    {
+        "topType": "登山",
+        "minType": "照明燈具",
+        "Id": 52,
+        "subType": "手電筒"
+    },
+    {
+        "topType": "登山",
+        "minType": "登山杖",
+        "Id": 53,
+        "subType": "登山杖"
+    },
+    {
+        "topType": "登山",
+        "minType": "定位導航｜登山錶",
+        "Id": 54,
+        "subType": "GPS通訊器"
+    },
+    {
+        "topType": "登山",
+        "minType": "定位導航｜登山錶",
+        "Id": 55,
+        "subType": "指北針"
+    },
+    {
+        "topType": "登山",
+        "minType": "定位導航｜登山錶",
+        "Id": 56,
+        "subType": "登山錶"
+    },
+    {
+        "topType": "登山",
+        "minType": "鍋爐炊具",
+        "Id": 57,
+        "subType": "瓦斯爐"
+    },
+    {
+        "topType": "登山",
+        "minType": "鍋爐炊具",
+        "Id": 58,
+        "subType": "汽化爐"
+    },
+    {
+        "topType": "登山",
+        "minType": "鍋爐炊具",
+        "Id": 59,
+        "subType": "燃料｜配件"
+    },
+    {
+        "topType": "登山",
+        "minType": "鍋爐炊具",
+        "Id": 60,
+        "subType": "鍋具"
+    },
+    {
+        "topType": "登山",
+        "minType": "鍋爐炊具",
+        "Id": 61,
+        "subType": "咖啡茶具"
+    },
+    {
+        "topType": "登山",
+        "minType": "鍋爐炊具",
+        "Id": 62,
+        "subType": "餐具"
+    },
+    {
+        "topType": "登山",
+        "minType": "鍋爐炊具",
+        "Id": 63,
+        "subType": "廚具｜配件"
+    },
+    {
+        "topType": "登山",
+        "minType": "鍋爐炊具",
+        "Id": 64,
+        "subType": "瑞士刀｜工具鉗"
+    },
+    {
+        "topType": "登山",
+        "minType": "鍋爐炊具",
+        "Id": 65,
+        "subType": "直刀｜斧鉗"
+    },
+    {
+        "topType": "登山",
+        "minType": "飲食",
+        "Id": 66,
+        "subType": "水瓶"
+    },
+    {
+        "topType": "登山",
+        "minType": "飲食",
+        "Id": 67,
+        "subType": "水袋"
+    },
+    {
+        "topType": "登山",
+        "minType": "飲食",
+        "Id": 68,
+        "subType": "保溫瓶"
+    },
+    {
+        "topType": "登山",
+        "minType": "飲食",
+        "Id": 69,
+        "subType": "濾水器"
+    },
+    {
+        "topType": "登山",
+        "minType": "飲食",
+        "Id": 70,
+        "subType": "食品｜能量包"
+    },
+    {
+        "topType": "登山",
+        "minType": "護具",
+        "Id": 71,
+        "subType": "足部防護"
+    },
+    {
+        "topType": "登山",
+        "minType": "護具",
+        "Id": 72,
+        "subType": "手部｜身體"
+    },
+    {
+        "topType": "登山",
+        "minType": "保健｜救護",
+        "Id": 73,
+        "subType": "防蚊蟲"
+    },
+    {
+        "topType": "登山",
+        "minType": "保健｜救護",
+        "Id": 74,
+        "subType": "救護保健"
+    },
+    {
+        "topType": "登山",
+        "minType": "保健｜救護",
+        "Id": 75,
+        "subType": "求生器材"
+    },
+    {
+        "topType": "登山",
+        "minType": "清潔｜保養",
+        "Id": 76,
+        "subType": "清潔保養噴劑"
+    },
+    {
+        "topType": "登山",
+        "minType": "清潔｜保養",
+        "Id": 77,
+        "subType": "修補工具"
+    },
+    {
+        "topType": "登山",
+        "minType": "清潔｜保養",
+        "Id": 78,
+        "subType": "扣具｜配件"
+    },
+    {
+        "topType": "男裝",
+        "minType": "機能外套",
+        "Id": 79,
+        "subType": "防水外套"
+    },
+    {
+        "topType": "男裝",
+        "minType": "機能外套",
+        "Id": 80,
+        "subType": "防水保暖外套"
+    },
+    {
+        "topType": "男裝",
+        "minType": "機能外套",
+        "Id": 81,
+        "subType": "雪衣"
+    },
+    {
+        "topType": "男裝",
+        "minType": "機能外套",
+        "Id": 82,
+        "subType": "軟殼外套"
+    },
+    {
+        "topType": "男裝",
+        "minType": "機能外套",
+        "Id": 83,
+        "subType": "羽絨外套"
+    },
+    {
+        "topType": "男裝",
+        "minType": "機能外套",
+        "Id": 84,
+        "subType": "化纖外套"
+    },
+    {
+        "topType": "男裝",
+        "minType": "機能外套",
+        "Id": 85,
+        "subType": "刷毛外套"
+    },
+    {
+        "topType": "男裝",
+        "minType": "機能外套",
+        "Id": 86,
+        "subType": "背心"
+    },
+    {
+        "topType": "男裝",
+        "minType": "機能外套",
+        "Id": 87,
+        "subType": "輕量風衣"
+    },
+    {
+        "topType": "男裝",
+        "minType": "上衣",
+        "Id": 88,
+        "subType": "長袖排汗"
+    },
+    {
+        "topType": "男裝",
+        "minType": "上衣",
+        "Id": 89,
+        "subType": "短袖排汗"
+    },
+    {
+        "topType": "男裝",
+        "minType": "上衣",
+        "Id": 90,
+        "subType": "保暖中層"
+    },
+    {
+        "topType": "男裝",
+        "minType": "上衣",
+        "Id": 91,
+        "subType": "襯衫"
+    },
+    {
+        "topType": "男裝",
+        "minType": "褲子",
+        "Id": 92,
+        "subType": "長褲"
+    },
+    {
+        "topType": "男裝",
+        "minType": "褲子",
+        "Id": 93,
+        "subType": "短褲"
+    },
+    {
+        "topType": "男裝",
+        "minType": "褲子",
+        "Id": 94,
+        "subType": "運動機能褲"
+    },
+    {
+        "topType": "男裝",
+        "minType": "褲子",
+        "Id": 95,
+        "subType": "排汗內褲"
+    },
+    {
+        "topType": "男裝",
+        "minType": "褲子",
+        "Id": 96,
+        "subType": "防水雨褲"
+    },
+    {
+        "topType": "男裝",
+        "minType": "褲子",
+        "Id": 97,
+        "subType": "腰帶"
+    },
+    {
+        "topType": "男裝",
+        "minType": "褲子",
+        "Id": 98,
+        "subType": "腿套"
+    },
+    {
+        "topType": "男裝",
+        "minType": "配件",
+        "Id": 99,
+        "subType": "防水帽"
+    },
+    {
+        "topType": "男裝",
+        "minType": "配件",
+        "Id": 100,
+        "subType": "快乾遮陽帽"
+    },
+    {
+        "topType": "男裝",
+        "minType": "配件",
+        "Id": 101,
+        "subType": "保暖帽"
+    },
+    {
+        "topType": "男裝",
+        "minType": "配件",
+        "Id": 102,
+        "subType": "頭巾"
+    },
+    {
+        "topType": "男裝",
+        "minType": "配件",
+        "Id": 103,
+        "subType": "手套"
+    },
+    {
+        "topType": "男裝",
+        "minType": "配件",
+        "Id": 104,
+        "subType": "袖套"
+    },
+    {
+        "topType": "男裝",
+        "minType": "鞋子",
+        "Id": 105,
+        "subType": "中高筒登山鞋"
+    },
+    {
+        "topType": "男裝",
+        "minType": "鞋子",
+        "Id": 106,
+        "subType": "短筒登山鞋"
+    },
+    {
+        "topType": "男裝",
+        "minType": "鞋子",
+        "Id": 107,
+        "subType": "跑鞋"
+    },
+    {
+        "topType": "男裝",
+        "minType": "鞋子",
+        "Id": 108,
+        "subType": "水陸涼鞋"
+    },
+    {
+        "topType": "男裝",
+        "minType": "鞋子",
+        "Id": 109,
+        "subType": "雪靴"
+    },
+    {
+        "topType": "男裝",
+        "minType": "鞋子",
+        "Id": 110,
+        "subType": "綁腿"
+    },
+    {
+        "topType": "男裝",
+        "minType": "鞋子",
+        "Id": 111,
+        "subType": "鞋墊"
+    },
+    {
+        "topType": "男裝",
+        "minType": "襪子",
+        "Id": 112,
+        "subType": "登山健行襪"
+    },
+    {
+        "topType": "男裝",
+        "minType": "襪子",
+        "Id": 113,
+        "subType": "跑步襪"
+    },
+    {
+        "topType": "女裝",
+        "minType": "機能外套",
+        "Id": 114,
+        "subType": "防水外套"
+    },
+    {
+        "topType": "女裝",
+        "minType": "機能外套",
+        "Id": 115,
+        "subType": "防水保暖外套"
+    },
+    {
+        "topType": "女裝",
+        "minType": "機能外套",
+        "Id": 116,
+        "subType": "雪衣"
+    },
+    {
+        "topType": "女裝",
+        "minType": "機能外套",
+        "Id": 117,
+        "subType": "軟殼外套"
+    },
+    {
+        "topType": "女裝",
+        "minType": "機能外套",
+        "Id": 118,
+        "subType": "羽絨外套"
+    },
+    {
+        "topType": "女裝",
+        "minType": "機能外套",
+        "Id": 119,
+        "subType": "化纖外套"
+    },
+    {
+        "topType": "女裝",
+        "minType": "機能外套",
+        "Id": 120,
+        "subType": "刷毛外套"
+    },
+    {
+        "topType": "女裝",
+        "minType": "機能外套",
+        "Id": 121,
+        "subType": "背心"
+    },
+    {
+        "topType": "女裝",
+        "minType": "機能外套",
+        "Id": 122,
+        "subType": "輕量風衣"
+    },
+    {
+        "topType": "女裝",
+        "minType": "上衣",
+        "Id": 123,
+        "subType": "長袖排汗"
+    },
+    {
+        "topType": "女裝",
+        "minType": "上衣",
+        "Id": 124,
+        "subType": "短袖排汗"
+    },
+    {
+        "topType": "女裝",
+        "minType": "上衣",
+        "Id": 125,
+        "subType": "保暖中層"
+    },
+    {
+        "topType": "女裝",
+        "minType": "上衣",
+        "Id": 126,
+        "subType": "運動內衣"
+    },
+    {
+        "topType": "女裝",
+        "minType": "上衣",
+        "Id": 127,
+        "subType": "襯衫"
+    },
+    {
+        "topType": "女裝",
+        "minType": "褲子",
+        "Id": 128,
+        "subType": "長褲"
+    },
+    {
+        "topType": "女裝",
+        "minType": "褲子",
+        "Id": 129,
+        "subType": "短褲"
+    },
+    {
+        "topType": "女裝",
+        "minType": "褲子",
+        "Id": 130,
+        "subType": "運動機能褲"
+    },
+    {
+        "topType": "女裝",
+        "minType": "褲子",
+        "Id": 131,
+        "subType": "排汗內褲"
+    },
+    {
+        "topType": "女裝",
+        "minType": "褲子",
+        "Id": 132,
+        "subType": "防水雨褲"
+    },
+    {
+        "topType": "女裝",
+        "minType": "褲子",
+        "Id": 133,
+        "subType": "腰帶"
+    },
+    {
+        "topType": "女裝",
+        "minType": "褲子",
+        "Id": 134,
+        "subType": "腿套"
+    },
+    {
+        "topType": "女裝",
+        "minType": "配件",
+        "Id": 135,
+        "subType": "防水帽"
+    },
+    {
+        "topType": "女裝",
+        "minType": "配件",
+        "Id": 136,
+        "subType": "快乾遮陽帽"
+    },
+    {
+        "topType": "女裝",
+        "minType": "配件",
+        "Id": 137,
+        "subType": "保暖帽"
+    },
+    {
+        "topType": "女裝",
+        "minType": "配件",
+        "Id": 138,
+        "subType": "頭巾"
+    },
+    {
+        "topType": "女裝",
+        "minType": "配件",
+        "Id": 139,
+        "subType": "手套"
+    },
+    {
+        "topType": "女裝",
+        "minType": "配件",
+        "Id": 140,
+        "subType": "袖套"
+    },
+    {
+        "topType": "女裝",
+        "minType": "鞋子",
+        "Id": 141,
+        "subType": "中高筒登山鞋"
+    },
+    {
+        "topType": "女裝",
+        "minType": "鞋子",
+        "Id": 142,
+        "subType": "短筒登山鞋"
+    },
+    {
+        "topType": "女裝",
+        "minType": "鞋子",
+        "Id": 143,
+        "subType": "跑鞋"
+    },
+    {
+        "topType": "女裝",
+        "minType": "鞋子",
+        "Id": 144,
+        "subType": "水陸涼鞋"
+    },
+    {
+        "topType": "女裝",
+        "minType": "鞋子",
+        "Id": 145,
+        "subType": "雪靴"
+    },
+    {
+        "topType": "女裝",
+        "minType": "鞋子",
+        "Id": 146,
+        "subType": "綁腿"
+    },
+    {
+        "topType": "女裝",
+        "minType": "鞋子",
+        "Id": 147,
+        "subType": "鞋墊"
+    },
+    {
+        "topType": "女裝",
+        "minType": "襪子",
+        "Id": 148,
+        "subType": "登山健行襪"
+    },
+    {
+        "topType": "女裝",
+        "minType": "襪子",
+        "Id": 149,
+        "subType": "跑步襪"
+    }
+]
